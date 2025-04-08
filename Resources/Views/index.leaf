@@ -1,12 +1,98 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <title>#(title)</title>
 </head>
 
-<body>
-  <h1>#(title)</h1>
+<body class="min-h-screen bg-base-200">
+  <!-- Navbar -->
+  <div class="navbar bg-base-100 shadow-lg">
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl">#(title)</a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li><a>Home</a></li>
+        <li><a>About</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="container mx-auto px-4 py-8">
+    <!-- Hero section -->
+    <div class="hero bg-base-100 rounded-box my-4 p-4">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">#(title)</h1>
+          <p class="py-6">Welcome to your new DaisyUI-powered website. This template gives you a responsive layout to build on.</p>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
+      <!-- Card 1 -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">Feature 1</h2>
+          <p>Description of the first feature of your application.</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary btn-sm">Learn More</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">Feature 2</h2>
+          <p>Description of the second feature of your application.</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary btn-sm">Learn More</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">Feature 3</h2>
+          <p>Description of the third feature of your application.</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary btn-sm">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer p-10 bg-base-100 text-base-content mt-8">
+    <div>
+      <span class="footer-title">Services</span> 
+      <a class="link link-hover">Branding</a> 
+      <a class="link link-hover">Design</a> 
+      <a class="link link-hover">Marketing</a>
+    </div> 
+    <div>
+      <span class="footer-title">Company</span> 
+      <a class="link link-hover">About us</a> 
+      <a class="link link-hover">Contact</a> 
+      <a class="link link-hover">Jobs</a>
+    </div> 
+    <div>
+      <span class="footer-title">Legal</span> 
+      <a class="link link-hover">Terms of use</a> 
+      <a class="link link-hover">Privacy policy</a> 
+      <a class="link link-hover">Cookie policy</a>
+    </div>
+  </footer>
 </body>
 </html>

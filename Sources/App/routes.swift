@@ -6,9 +6,25 @@ func routes(_ app: Application) throws {
         try await req.view.render("index", ["title": "Hello Vapor!"])
     }
 
-    app.get("hello") { req async -> String in
-        "Hello, world!"
+    // Create protected route group which requires user auth.
+    let protected = app.routes.grouped([
+        User.sessionAuthenticator(),
+        User.redirectMiddleware { req -> String in
+            return "/auth/login?next=\(req.url.path)"
+        },
+    ])
+
+    // Add GET /me route for reading user's email.
+    protected.get("me") { req -> View in
+        let email = try req.auth.require(User.self).email
+        return try await req.view.render("me", ["email": email])
     }
 
-    try app.register(collection: TodoController())
+    // Making this a GET would be vulnerable to CSRF attacks. GET request should not have side effects.
+    protected.delete("signout") { req -> String in
+        req.session.destroy()
+        return "signed out"
+    }
+
+    try app.register(collection: AuthController())
 }

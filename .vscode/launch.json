@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CookiesTutorial}",
+            "name": "Debug App",
+            "program": "${workspaceFolder:CookiesTutorial}/.build/debug/App",
+            "preLaunchTask": "swift: Build Debug App"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:CookiesTutorial}",
+            "name": "Release App",
+            "program": "${workspaceFolder:CookiesTutorial}/.build/release/App",
+            "preLaunchTask": "swift: Build Release App"
+        }
+    ]
+}

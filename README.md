@@ -1,6 +1,9 @@
 # CookiesTutorial
 
-💧 A project built with the Vapor web framework.
+This is an example implementation of a website written in Swift using the Vapor framework that uses cookies for user authentication.
+The goal is to show how to do user auth in a secure way that is resistant to the most common cookie stealing attacks, such as XSS or XSRF.
+
+I'd like to follow up with a video or a blog post where I use this codebase to explain cookie-based web vulnerabilities t expecially iOS developers who would like to learn more about web development.
 
 ## Getting Started
 
